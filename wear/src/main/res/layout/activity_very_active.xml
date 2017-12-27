@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ambient_mode_text"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context="au.com.codeka.steptastic.VeryActive"
+    tools:deviceIds="wear">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:text="Very Active"
+                android:textColor="@color/dark_red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:text='According to your medical indices and number of steps, your Activity Level is "Very Active".'
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:text="The following Juices are recommended to you:"
+                android:textColor="@color/circular_button_disabled"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/buttonBabySpinach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baby Spinach Juice" />
+
+            <Button
+                android:id="@+id/buttonCarrot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carrot Juice" />
+
+            <Button
+                android:id="@+id/buttonCabbage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cabbage Juice" />
+
+            <Button
+                android:id="@+id/buttonDetoxGreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detox Green Juice" />
+
+            <Button
+                android:id="@+id/buttonTangyTomato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tangy Tomato Juice" />
+
+            <Button
+                android:id="@+id/buttonCarrotAndCelery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="Carrot and Celery Juice" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.wear.widget.BoxInsetLayout>
+

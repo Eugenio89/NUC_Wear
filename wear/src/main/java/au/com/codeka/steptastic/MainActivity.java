@@ -29,7 +29,7 @@ public class MainActivity extends WearableActivity {
     }
 
     public void InsertDataButton (View view){
-        Intent intent = new Intent(this, Pasos.class); //Esta era la buena
+        Intent intent = new Intent(this, Datos.class); //Esta era la buena
         startActivity(intent);
     }
 

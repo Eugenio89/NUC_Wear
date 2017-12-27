@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/boxInsetLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/ambient_mode_text"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context="au.com.codeka.steptastic.Datos"
@@ -19,7 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text"
@@ -29,7 +29,8 @@
                 android:paddingTop="10dp"
                 android:text="User Data:"
                 android:textColor="@color/dark_red"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView"
@@ -38,6 +39,104 @@
                 android:gravity="center"
                 android:text="Height (m)"
                 android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Weight (Kg)"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Age (Years)"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Gender"
+                android:textColor="@color/black" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButtonMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:buttonTint="@color/circular_button_disabled"
+                    android:gravity="center"
+                    android:text="Male"
+                    android:textColor="@color/circular_button_disabled"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/circular_button_disabled"
+                    android:shadowColor="@color/black"
+                    android:text="Female"
+                    android:textColor="@color/circular_button_disabled"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/radioButtonMale"
+                    app:layout_constraintTop_toBottomOf="@+id/radioButtonMale" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:onClick="OnClickSave"
+                android:paddingBottom="0dp"
+                android:paddingTop="0dp"
+                android:text="Save"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -12,5 +12,10 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_pasos">Pasos</string>
     <string name="title_activity_datos">Datos</string>
+    <string name="title_activity_sedentary">Sedentary</string>
+    <string name="title_activity_lightly_active">LightlyActive</string>
+    <string name="title_activity_moderately_active">ModeratelyActive</string>
+    <string name="title_activity_very_active">VeryActive</string>
+    <string name="title_activity_extremely_active">ExtremelyActive</string>
 
 </resources>
