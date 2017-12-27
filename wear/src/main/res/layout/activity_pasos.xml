@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/boxInsetLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
@@ -11,51 +12,185 @@
     tools:context="au.com.codeka.steptastic.Pasos"
     tools:deviceIds="wear">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/frameLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:boxedEdges="all">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:text="Retrieve Steps:"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textViewPasos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewPasos"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:onClick="ObtenerPasos"
-            android:text="Get Steps"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:text="Health Stats:"
+                android:textColor="@color/dark_red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    </android.support.constraint.ConstraintLayout>
-</android.support.wear.widget.BoxInsetLayout>
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ObtenerPasos"
+                android:text="Get Steps"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="48dp"
+                tools:layout_conversion_absoluteWidth="98dp"
+                tools:layout_editor_absoluteX="58dp"
+                tools:layout_editor_absoluteY="121dp" />
+
+            <TextView
+                android:id="@+id/textViewPasos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="1dp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <Button
+                android:id="@+id/buttonCalculations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate Stats" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Body Mass Index"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPasos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="92dp"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <TextView
+                android:id="@+id/textViewBMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="1dp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Basal Metabolic Rate"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPasos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="92dp"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <TextView
+                android:id="@+id/textViewBMR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="1dp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Total Daily Energy \nExpenditure"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPasos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="92dp"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <TextView
+                android:id="@+id/textViewTDEE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="1dp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Activity Level"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textViewPasos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="92dp"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <TextView
+                android:id="@+id/textViewActivityLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="1dp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <Button
+                android:id="@+id/buttonRecommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recommended \nJuices" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
 
