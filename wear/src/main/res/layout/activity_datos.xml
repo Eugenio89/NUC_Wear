@@ -25,6 +25,7 @@
                 android:id="@+id/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:text="User Data:"
@@ -38,7 +39,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Height (m)"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText"
@@ -55,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Weight (Kg)"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText2"
@@ -72,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Age (Years)"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -89,24 +93,30 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Gender"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-            <android.support.constraint.ConstraintLayout
+
+            <RadioGroup
+
+
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <RadioButton
                     android:id="@+id/radioButtonMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginEnd="0dp"
                     android:buttonTint="@color/circular_button_disabled"
                     android:gravity="center"
                     android:text="Male"
                     android:textColor="@color/circular_button_disabled"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -115,25 +125,31 @@
                     android:id="@+id/radioButtonFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
                     android:buttonTint="@color/circular_button_disabled"
                     android:shadowColor="@color/black"
                     android:text="Female"
                     android:textColor="@color/circular_button_disabled"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/radioButtonMale"
                     app:layout_constraintTop_toBottomOf="@+id/radioButtonMale" />
 
-            </android.support.constraint.ConstraintLayout>
+
+            </RadioGroup>
 
             <Button
                 android:id="@+id/Save"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginStart="50dp"
+                android:gravity="center_vertical|center_horizontal|center"
                 android:onClick="OnClickSave"
                 android:paddingBottom="0dp"
                 android:paddingTop="0dp"
-                android:text="Save"
+                android:text="Save and \nContinue"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
