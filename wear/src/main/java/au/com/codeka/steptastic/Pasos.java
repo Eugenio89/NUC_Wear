@@ -36,13 +36,7 @@ public class Pasos extends WearableActivity {
         }
         //Hasta aqui
 
-
-
-
     }
-
-
-
 
 
     public void ObtenerPasos (View view){
@@ -54,6 +48,72 @@ public class Pasos extends WearableActivity {
         //textView.setText();
 
     }
+
+
+
+
+    public void buttonCalculations (View view){
+
+
+        //************** Match Steps with Activity Factor Level ***********************************
+        Integer stepsInteger = (int) (long) steps;
+
+        if (stepsInteger <= 5000) {
+            TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
+            tvActivity.setText("Sedentary");
+        }
+        else if (stepsInteger > 5000 && stepsInteger <= 6000){
+            TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
+            tvActivity.setText("Lightly Active");
+        }
+        else if (stepsInteger > 6000 && stepsInteger <= 7000){
+            TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
+            tvActivity.setText("Moderately Active");
+        }
+        else if (stepsInteger > 7000 && stepsInteger <= 8000){
+            TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
+            tvActivity.setText("Very Active");
+        }
+        else if (stepsInteger > 8000){
+            TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
+            tvActivity.setText("Extremely Active");
+        }
+        //*****************************************************************************************
+
+
+//        Intent intent = new Intent(this, StepsActivity.class); //Esta era la buena
+//        startActivity(intent);
+    }
+
+
+
+
+    public void recommendJuices (View view) {
+
+        //******************** Open the Recommended Recipe List ***********************************
+        Integer stepsInteger = (int) (long) steps;
+
+        if (stepsInteger <= 5000) {
+            Intent intent = new Intent(this, Sedentary.class); //Esta era la buena
+            startActivity(intent);
+        } else if (stepsInteger > 5000 && stepsInteger <= 6000) {
+            Intent intent = new Intent(this, LightlyActive.class); //Esta era la buena
+            startActivity(intent);
+        } else if (stepsInteger > 6000 && stepsInteger <= 7000) {
+            Intent intent = new Intent(this, ModeratelyActive.class); //Esta era la buena
+            startActivity(intent);
+        } else if (stepsInteger > 7000 && stepsInteger <= 8000) {
+            Intent intent = new Intent(this, VeryActive.class); //Esta era la buena
+            startActivity(intent);
+        } else if (stepsInteger > 8000) {
+            Intent intent = new Intent(this, ExtremelyActive.class); //Esta era la buena
+            startActivity(intent);
+        }
+        //*****************************************************************************************
+    }
+
+
+
 
 
 
