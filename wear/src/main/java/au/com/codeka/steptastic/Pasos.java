@@ -1,10 +1,17 @@
 package au.com.codeka.steptastic;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
+
+import java.text.CollationElementIterator;
+import java.text.DecimalFormat;
 
 import static au.com.codeka.steptastic.StepsActivity.EXTRA_PASOS;
 import static au.com.codeka.steptastic.StepsActivity.steps;
@@ -26,7 +33,6 @@ public class Pasos extends WearableActivity {
 
         // Enables Always-on
         setAmbientEnabled();
-
 
 
         //Desde aqui trato de recibir el numero de pasos
@@ -81,12 +87,157 @@ public class Pasos extends WearableActivity {
         //*****************************************************************************************
 
 
-//        Intent intent = new Intent(this, StepsActivity.class); //Esta era la buena
-//        startActivity(intent);
+
+
+
+        //**************** Perform Medical Indices Calculations ***********************************
+
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+
+        boolean radioButtonMaleValue = sharedPreferences.getBoolean("Male_Value", false);
+        boolean radioButtonFemaleValue = sharedPreferences.getBoolean("Female_Value", false);
+
+        String altura = sharedPreferences.getString("storedHeight", "Height (m)");
+
+//        editText.setText(altura);
+
+        String peso = sharedPreferences.getString("storedWeight", "Weight (Kg)");
+//        editText2.setText(peso);
+
+        String edad = sharedPreferences.getString("storedAge", "Age (Years)");
+//        editText3.setText(edad);
+
+//        if (radioButtonMaleValue) {
+////            radioButtonMale.setChecked(true); //revisaras esto
+//        } else {
+////            radioButtonMale.setChecked(false);
+//        }
+//
+//        if (radioButtonFemaleValue) {
+////            radioButtonFemale.setChecked(true); //revisaras esto
+//        } else {
+////            radioButtonFemale.setChecked(false);
+//        }
+
+
+        //*************************BMI*************************************************************
+
+        TextView tvBMI = (TextView) findViewById(R.id.textViewBMI);
+
+        double bmi;
+        double pesoDouble;
+        double alturaDouble;
+
+        pesoDouble = Double.parseDouble(peso);
+        alturaDouble = Double.parseDouble(altura);
+
+        bmi = pesoDouble/(alturaDouble * alturaDouble);
+        tvBMI.setText(new DecimalFormat("##.###").format(bmi));
+        //tvBMI.setText(Double.toString(bmi));
+
+        //*********************************BMR*****************************************************
+
+        TextView tvBMR = (TextView) findViewById(R.id.textViewBMR);
+//
+        double bmr;
+        double edadDouble;
+        double tdee;
+//
+        pesoDouble = Double.parseDouble(peso);
+        alturaDouble = Double.parseDouble(altura);
+        edadDouble = Double.parseDouble(edad);
+//
+//        bmr = (10*pesoDouble) + (6.25 * alturaDouble * 100) - (5 * edadDouble) + 5;
+//        tvBMR.setText(new DecimalFormat("##.###").format(bmr));
+
+        //****************************Check Radio Buttons******************************************
+
+        if (radioButtonMaleValue) {
+            bmr = (10*pesoDouble) + (6.25 * alturaDouble * 100) - (5 * edadDouble) + 5;
+            tvBMR.setText(new DecimalFormat("##.###").format(bmr));
+
+            //TDEE Depend on Activity Factor (Number of Steps)
+            //**************************************************************************************
+
+            TextView tvTDEE = (TextView) findViewById(R.id.textViewTDEE);
+
+            if (stepsInteger <= 5000) {
+                tdee = bmr * 1.2;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 5000 && stepsInteger <= 6000){
+                tdee = bmr * 1.375;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 6000 && stepsInteger <= 7000){
+                tdee = bmr * 1.55;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 7000 && stepsInteger <= 8000){
+                tdee = bmr * 1.752;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 8000){
+                tdee = bmr * 1.9;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            //**************************************************************************************
+
+
+
+        } else {
+
+        }
+
+        if (radioButtonFemaleValue) {
+            bmr = (10*pesoDouble) + (6.25 * alturaDouble * 100) - (5 * edadDouble) - 161;
+            tvBMR.setText(new DecimalFormat("##.###").format(bmr));
+
+            //TDEE Depend on Activity Factor (Number of Steps)
+            //**************************************************************************************
+
+            TextView tvTDEE = (TextView) findViewById(R.id.textViewTDEE);
+
+            if (stepsInteger <= 5000) {
+                tdee = bmr * 1.2;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 5000 && stepsInteger <= 6000){
+                tdee = bmr * 1.375;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 6000 && stepsInteger <= 7000){
+                tdee = bmr * 1.55;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 7000 && stepsInteger <= 8000){
+                tdee = bmr * 1.752;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            else if (stepsInteger > 8000){
+                tdee = bmr * 1.9;
+                tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+            }
+            //**************************************************************************************
+
+        } else {
+
+        }
+
+        //*****************************************************************************************
+
+
+        //*************************************TDEE************************************************
+
+//        tdee = bmr * 1.2;
+//        tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
+
     }
 
 
 
+//*************************************************************************************************
 
     public void recommendJuices (View view) {
 
