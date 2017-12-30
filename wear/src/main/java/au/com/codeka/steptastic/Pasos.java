@@ -3,9 +3,11 @@ package au.com.codeka.steptastic;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -20,7 +22,18 @@ import static au.com.codeka.steptastic.StepsActivity.steps;
 public class Pasos extends WearableActivity {
 
 
+    //***************************************************************************************
+
+
+
+    //***************************************************************************************
+
+//    final long initialStepsNoChange = steps;
+
+
     private TextView mTextView;
+    boolean aux = false;
+
 
 
     @Override
@@ -34,6 +47,10 @@ public class Pasos extends WearableActivity {
         // Enables Always-on
         setAmbientEnabled();
 
+        long realSteps = 0;
+        TextView textView = findViewById(R.id.textViewPasos);
+        textView.setText(String.format("Steps: %d", realSteps));
+
 
         //Desde aqui trato de recibir el numero de pasos
         Bundle extras = getIntent().getExtras();
@@ -42,20 +59,146 @@ public class Pasos extends WearableActivity {
         }
         //Hasta aqui
 
+        //final long initialStepsNoChange = steps;
+
+
+
+//************************************RESET********************************************************
+        final Button button = findViewById(R.id.ResetSteps);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+
+                aux = false;
+
+                long realSteps = 0;
+                TextView textView = findViewById(R.id.textViewPasos);
+                textView.setText(String.format("Steps: %d", realSteps));
+
+            }
+        });
+
+//***********************************START*********************************************************
+        final Button button2 = findViewById(R.id.StartWalk);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+
+                aux = true;
+                final long initialStepsNoChange = steps;
+                TextView textView = findViewById(R.id.textViewPasos);
+
+
+
+                        final Handler handler =new Handler();
+                        final Runnable r1 = new Runnable() {
+                            public void run()
+                            {
+                                if (aux == true) {
+                                    handler.postDelayed(this, 1000);
+
+                                    long realSteps = steps - initialStepsNoChange;
+
+                                    TextView textView = findViewById(R.id.textViewPasos);
+                                    textView.setText(String.format("Steps: %d", realSteps));
+
+                                    if (aux == false) {
+
+                                        realSteps = 0;
+                                        textView.setText(String.format("Steps: %d", realSteps));
+
+                                        handler.removeCallbacks(null);
+                                        handler.removeCallbacksAndMessages(null);
+                                        Pasos.super.onStop();
+
+                                    }
+                                }
+                            }
+                        };
+                        handler.postDelayed(r1, 0000);
+
+
+                    if (aux == false) {
+                        long realSteps = 0;
+                        //TextView textView = findViewById(R.id.textViewPasos);
+                        textView.setText(String.format("Steps: %d", realSteps));
+                        Pasos.super.onStop();
+                    }
+
+
+
+            }
+        });
+//**************************************************************************************************
+
+
     }
 
 
-    public void ObtenerPasos (View view){
+
+
+//*****************Update Number of Steps when the Button is Clicked********************************
+
+//    public void ObtenerPasos (View view) {
     //Do something when the button is clicked
 
-        TextView textView = findViewById(R.id.textViewPasos);
-        //textView.setText("Hola");
-        textView.setText(String.format("Steps: %d", steps));
-        //textView.setText();
-
-    }
+    //TextView textView = findViewById(R.id.textViewPasos);
+    //textView.setText(String.format("Steps: %d", steps));
 
 
+//        final long initialStepsNoChange = steps;
+//
+//
+//
+//        while (aux = false)
+//        {
+//            long realSteps = steps - initialStepsNoChange;
+//
+//            TextView textView = findViewById(R.id.textViewPasos);
+//            textView.setText(String.format("Steps: %d", realSteps));
+//
+//
+//        }
+
+
+//        final Handler handler =new Handler();
+//        final Runnable r1 = new Runnable() {
+//            public void run()
+//            {
+//                handler.postDelayed(this, 1000);
+
+//                long realSteps = steps - initialStepsNoChange;
+//
+//                TextView textView = findViewById(R.id.textViewPasos);
+//                textView.setText(String.format("Steps: %d", realSteps));
+
+
+//            }
+//        };
+//        handler.postDelayed(r1, 0000);
+//
+//    }
+//**************************************************************************************************
+
+
+
+
+
+
+
+//    public void ResetSteps (View view){
+//        //Do something on Reset Button CLick
+//
+//                final Handler handler =new Handler();
+//                handler.removeCallbacksAndMessages(null);
+//
+//                long realSteps = 0;
+//
+//                TextView textView = findViewById(R.id.textViewPasos);
+//                textView.setText(String.format("Steps: %d", realSteps));
+//
+//    }
+//**************************************************************************************************
 
 
     public void buttonCalculations (View view){

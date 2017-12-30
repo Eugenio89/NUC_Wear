@@ -25,26 +25,45 @@
                 android:id="@+id/text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:paddingTop="15dp"
-                android:text="Health Stats:"
+                android:text="Step Counter:"
                 android:textColor="@color/dark_red"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="ObtenerPasos"
-                android:text="Get Steps"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_conversion_absoluteWidth="98dp"
-                tools:layout_editor_absoluteX="58dp"
-                tools:layout_editor_absoluteY="121dp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/StartWalk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:onClick="ObtenerPasos"
+                    android:text="Start \nWalk"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_conversion_absoluteHeight="48dp"
+                    tools:layout_conversion_absoluteWidth="98dp"
+                    tools:layout_editor_absoluteX="58dp"
+                    tools:layout_editor_absoluteY="121dp" />
+
+                <Button
+                    android:id="@+id/ResetSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:onClick="ResetSteps"
+                    android:text="Reset \nSteps" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textViewPasos"
@@ -53,7 +72,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/StartWalk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -61,10 +80,24 @@
                 tools:layout_editor_absoluteX="107dp"
                 tools:layout_editor_absoluteY="78dp" />
 
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="Health Stats:"
+                android:textColor="@color/dark_red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/buttonCalculations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
                 android:onClick="buttonCalculations"
                 android:text="Calculate Stats" />
 
@@ -91,7 +124,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/StartWalk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -122,7 +155,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/StartWalk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -153,7 +186,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/StartWalk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -184,7 +217,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/StartWalk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -196,6 +229,8 @@
                 android:id="@+id/buttonRecommendation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
                 android:onClick="recommendJuices"
                 android:text="Recommended \nJuices" />
 
