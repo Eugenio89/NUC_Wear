@@ -17,5 +17,6 @@
     <string name="title_activity_moderately_active">ModeratelyActive</string>
     <string name="title_activity_very_active">VeryActive</string>
     <string name="title_activity_extremely_active">ExtremelyActive</string>
+    <string name="title_activity_juice_celery">JuiceCelery</string>
 
 </resources>

@@ -33,6 +33,7 @@ public class Pasos extends WearableActivity {
 
     private TextView mTextView;
     boolean aux = false;
+    long realSteps;
 
 
 
@@ -88,8 +89,6 @@ public class Pasos extends WearableActivity {
                 final long initialStepsNoChange = steps;
                 TextView textView = findViewById(R.id.textViewPasos);
 
-
-
                         final Handler handler =new Handler();
                         final Runnable r1 = new Runnable() {
                             public void run()
@@ -124,8 +123,6 @@ public class Pasos extends WearableActivity {
                         textView.setText(String.format("Steps: %d", realSteps));
                         Pasos.super.onStop();
                     }
-
-
 
             }
         });
@@ -205,7 +202,7 @@ public class Pasos extends WearableActivity {
 
 
         //************** Match Steps with Activity Factor Level ***********************************
-        Integer stepsInteger = (int) (long) steps;
+        Integer stepsInteger = (int) (long) realSteps;
 
         if (stepsInteger <= 5000) {
             TextView tvActivity = (TextView) findViewById(R.id.textViewActivityLevel);
@@ -377,15 +374,13 @@ public class Pasos extends WearableActivity {
 //        tvTDEE.setText(new DecimalFormat("##.###").format(tdee));
 
     }
-
-
-
+    
 //*************************************************************************************************
 
     public void recommendJuices (View view) {
 
         //******************** Open the Recommended Recipe List ***********************************
-        Integer stepsInteger = (int) (long) steps;
+        Integer stepsInteger = (int) (long) realSteps;
 
         if (stepsInteger <= 5000) {
             Intent intent = new Intent(this, Sedentary.class); //Esta era la buena
@@ -405,10 +400,5 @@ public class Pasos extends WearableActivity {
         }
         //*****************************************************************************************
     }
-
-
-
-
-
 
 }
