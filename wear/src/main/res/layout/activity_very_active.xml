@@ -54,30 +54,35 @@
                 android:id="@+id/buttonBabySpinach"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="BabySpinach"
                 android:text="Baby Spinach Juice" />
 
             <Button
                 android:id="@+id/buttonCarrot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="Carrot"
                 android:text="Carrot Juice" />
 
             <Button
                 android:id="@+id/buttonCabbage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="Cabbage"
                 android:text="Cabbage Juice" />
 
             <Button
                 android:id="@+id/buttonDetoxGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="DetoxGreen"
                 android:text="Detox Green Juice" />
 
             <Button
                 android:id="@+id/buttonTangyTomato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="TangyTomato"
                 android:text="Tangy Tomato Juice" />
 
             <Button
@@ -85,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
+                android:onClick="CarrotAndCelery"
                 android:text="Carrot and Celery Juice" />
 
         </LinearLayout>

@@ -1,7 +1,9 @@
 package au.com.codeka.steptastic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class ModeratelyActive extends WearableActivity {
@@ -18,4 +20,26 @@ public class ModeratelyActive extends WearableActivity {
         // Enables Always-on
         setAmbientEnabled();
     }
+
+    public void AppleJuice (View view){
+        Intent intent = new Intent(this, JuiceApple.class);
+        startActivity(intent);
+    }
+
+    public void WheatgrassJuice (View view){
+        Intent intent = new Intent(this, JuiceWheatgrass.class);
+        startActivity(intent);
+    }
+
+    public void CelebCeleryJuice (View view){
+        Intent intent = new Intent(this, JuiceCelebCelery.class);
+        startActivity(intent);
+    }
+
+    public void PearJuice (View view){
+        Intent intent = new Intent(this, JuicePear.class);
+        startActivity(intent);
+    }
+
+
 }

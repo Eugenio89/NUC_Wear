@@ -145,7 +145,123 @@
         </activity>
         <activity
             android:name=".JuiceCelery"
-            android:label="@string/title_activity_juice_celery"></activity>
+            android:label="@string/title_activity_juice_celery" />
+        <activity
+            android:name=".JuiceTomato"
+            android:label="@string/title_activity_juice_tomato">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceDreamyCarrot"
+            android:label="@string/title_activity_main2_juice_dreamy_carrot">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceKale"
+            android:label="@string/title_activity_juice_kale" />
+        <activity
+            android:name=".JuiceSpinach"
+            android:label="@string/title_activity_juice_spinach" />
+        <activity
+            android:name=".JuiceMultivitamin"
+            android:label="@string/title_activity_juice_multivitamin" />
+        <activity
+            android:name=".JuicePomegranate"
+            android:label="@string/title_activity_juice_pomegranate" />
+        <activity
+            android:name=".JuiceBellPepper"
+            android:label="@string/title_activity_juice_bell_pepper" />
+        <activity
+            android:name=".JuiceApple"
+            android:label="@string/title_activity_juice_apple" />
+        <activity
+            android:name=".JuiceWheatgrass"
+            android:label="@string/title_activity_juice_wheatgrass">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceCelebCelery"
+            android:label="@string/title_activity_juice_celeb_celery" />
+        <activity
+            android:name=".JuicePear"
+            android:label="@string/title_activity_juice_pear">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceBabySpinach"
+            android:label="@string/title_activity_juice_baby_spinach">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceCarrot"
+            android:label="@string/title_activity_juice_carrot">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceCabbage"
+            android:label="@string/title_activity_juice_cabbage" />
+        <activity
+            android:name=".JuiceDetoxGreen"
+            android:label="@string/title_activity_juice_detox_green" />
+        <activity
+            android:name=".JuiceTangyTomato"
+            android:label="@string/title_activity_juice_tangy_tomato">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".JuiceCarrotAndCelery"
+            android:label="@string/title_activity_juice_carrot_and_celery" />
+        <activity
+            android:name=".JuicePurpleCabbage"
+            android:label="@string/title_activity_juice_purple_cabbage" />
+        <activity
+            android:name=".JuiceGrape"
+            android:label="@string/title_activity_juice_grape" />
+        <activity
+            android:name=".JuiceOrange"
+            android:label="@string/title_activity_juice_orange"></activity>
     </application>
 
 </manifest>

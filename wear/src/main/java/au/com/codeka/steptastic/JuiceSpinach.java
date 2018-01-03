@@ -6,14 +6,14 @@ import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.TextView;
 
-public class ExtremelyActive extends WearableActivity {
+public class JuiceSpinach extends WearableActivity {
 
     private TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_extremely_active);
+        setContentView(R.layout.activity_juice_spinach);
 
         mTextView = (TextView) findViewById(R.id.text);
 
@@ -21,18 +21,8 @@ public class ExtremelyActive extends WearableActivity {
         setAmbientEnabled();
     }
 
-    public void PurpleCabbage (View view){
-        Intent intent = new Intent(this, JuicePurpleCabbage.class);
-        startActivity(intent);
-    }
-
-    public void Grape (View view){
-        Intent intent = new Intent(this, JuiceGrape.class);
-        startActivity(intent);
-    }
-
-    public void Orange (View view){
-        Intent intent = new Intent(this, JuiceOrange.class);
+    public void button_ready (View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

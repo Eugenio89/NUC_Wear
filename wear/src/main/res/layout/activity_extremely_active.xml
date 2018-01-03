@@ -54,12 +54,14 @@
                 android:id="@+id/buttonPurpleCabbage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="PurpleCabbage"
                 android:text="Purple Cabbage Juice" />
 
             <Button
                 android:id="@+id/buttonGrape"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="Grape"
                 android:text="Grape Juice" />
 
             <Button
@@ -67,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
+                android:onClick="Orange"
                 android:text="Orange Juice" />
 
         </LinearLayout>

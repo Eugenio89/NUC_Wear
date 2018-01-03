@@ -18,5 +18,25 @@
     <string name="title_activity_very_active">VeryActive</string>
     <string name="title_activity_extremely_active">ExtremelyActive</string>
     <string name="title_activity_juice_celery">JuiceCelery</string>
+    <string name="title_activity_juice_tomato">JuiceTomato</string>
+    <string name="title_activity_main2_juice_dreamy_carrot">Main2ActivityJuiceDreamyCarrot</string>
+    <string name="title_activity_juice_kale">JuiceKale</string>
+    <string name="title_activity_juice_spinach">JuiceSpinach</string>
+    <string name="title_activity_juice_multivitamin">JuiceMultivitamin</string>
+    <string name="title_activity_juice_pomegranate">JuicePomegranate</string>
+    <string name="title_activity_juice_bell_pepper">JuiceBellPepper</string>
+    <string name="title_activity_juice_apple">JuiceApple</string>
+    <string name="title_activity_juice_wheatgrass">JuiceWheatgrass</string>
+    <string name="title_activity_juice_celeb_celery">JuiceCelebCelery</string>
+    <string name="title_activity_juice_pear">JuicePear</string>
+    <string name="title_activity_juice_baby_spinach">JuiceBabySpinach</string>
+    <string name="title_activity_juice_carrot">JuiceCarrot</string>
+    <string name="title_activity_juice_cabbage">JuiceCabbage</string>
+    <string name="title_activity_juice_detox_green">JuiceDetoxGreen</string>
+    <string name="title_activity_juice_tangy_tomato">JuiceTangyTomato</string>
+    <string name="title_activity_juice_carrot_and_celery">JuiceCarrotAndCelery</string>
+    <string name="title_activity_juice_purple_cabbage">JuicePurpleCabbage</string>
+    <string name="title_activity_juice_grape">JuiceGrape</string>
+    <string name="title_activity_juice_orange">JuiceOrange</string>
 
 </resources>

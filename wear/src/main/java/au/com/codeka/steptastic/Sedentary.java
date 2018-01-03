@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class Sedentary extends WearableActivity {
@@ -25,6 +24,16 @@ public class Sedentary extends WearableActivity {
 
     public void buttonCelery (View view){
         Intent intent = new Intent(this, JuiceCelery.class);
+        startActivity(intent);
+    }
+
+    public void buttonTomato (View view){
+        Intent intent = new Intent(this, JuiceTomato.class);
+        startActivity(intent);
+    }
+
+    public void buttonDreamyCarrot (View view){
+        Intent intent = new Intent(this, JuiceDreamyCarrot.class);
         startActivity(intent);
     }
 
